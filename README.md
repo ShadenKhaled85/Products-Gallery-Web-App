@@ -47,6 +47,7 @@ A modern **Angular** web application designed to display products from an extern
 ## Installation
 
 ### **1. Clone Repository**
+git clone https://github.com/your-username/ProductGalleryWebApp.git
 cd ProductGalleryWebApp
 
 ### **2. Install Dependencies**
