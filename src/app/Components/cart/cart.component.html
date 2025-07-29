@@ -1,1 +1,24 @@
-<p>cart works!</p>
+<div class="space-y-6">
+  @for (prd of cartItems; track $index) {
+  <div class="flex items-center gap-6 p-4 border rounded-lg shadow-sm">
+    <!-- ? Product Image -->
+    <img [src]="prd.product.image!" alt="Product Image"
+      class="w-32 h-32 object-contain rounded border border-gray-200" />
+
+    <!-- ? Product Info -->
+    <div class="flex-1 space-y-2">
+      <h2 class="text-xl font-semibold text-blue-800">{{ prd.product.title }}</h2>
+      <p class="text-lg text-blue-600 font-medium">${{ prd.product.price }}</p>
+
+      <!-- ? Quantity Controls -->
+      <div class="flex items-center gap-3">
+        <button (click)="decreaseCount(prd.product.id)"
+          class="w-8 h-8 text-xl font-bold bg-red-100 text-red-600 rounded hover:bg-red-200">−</button>
+        <span class="text-lg font-medium">{{ prd.count }}</span>
+        <button (click)="increaseCount(prd.product.id)"
+          class="w-8 h-8 text-xl font-bold bg-green-100 text-green-600 rounded hover:bg-green-200">+</button>
+      </div>
+    </div>
+  </div>
+  }
+</div>

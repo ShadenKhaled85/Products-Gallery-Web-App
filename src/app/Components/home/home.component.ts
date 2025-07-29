@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { Product } from '../../Models/Product';
 import { ProductsApiService } from '../../Services/products-api.service';
+import { CartService } from '../../Services/cart.service';
 
 
 @Component({
@@ -13,9 +14,11 @@ import { ProductsApiService } from '../../Services/products-api.service';
 })
 export class HomeComponent implements OnInit{
 
+
     myProducts : Product[] = [];
 
     private readonly productsService = inject(ProductsApiService)
+    private readonly cartSer = inject(CartService)
 
         customOptions: OwlOptions = {
     loop: true,
@@ -63,7 +66,6 @@ export class HomeComponent implements OnInit{
     callProducts(){
     this.productsService.getProducts().subscribe({
       next: (res)=> {
-        console.log(res);
         this.myProducts = res
       },
       error: (err)=>{
@@ -72,9 +74,12 @@ export class HomeComponent implements OnInit{
     })
   }
 
-
   ngOnInit(): void {
-      this.callProducts();
+    this.callProducts();
+  }
+
+    onAddToCart(product: Product){
+    this.cartSer.AddToCart(product)
   }
 
 
