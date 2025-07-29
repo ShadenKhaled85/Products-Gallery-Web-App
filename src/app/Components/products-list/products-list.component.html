@@ -1,0 +1,20 @@
+
+<input type="text" (input)="onProductSearch($event)"> 
+
+<p (click)="onSortByPrice()">Price</p>
+<p (click)="onSortByName()">Name (A-Z)</p>
+
+<section class="products-list">
+
+@if (productsListFiltered) {
+    @for (product of productsListFiltered; track $index) {
+       <app-product-card [product]="product"></app-product-card>
+    }
+}
+@else {
+    <!-- Handle API errors with a fallback UI if no products are returned  -->
+    <div>No Products To View</div>
+}
+
+
+</section>
