@@ -1,4 +1,4 @@
-A modern **Angular** web application designed to display products from an external API, allowing users to browse, view details, and manage their shopping cart. The application also includes a simple authentication flow.
+A modern **Angular** web application designed to display products from an external API, allowing users to browse, view details, and manage their shopping cart.
 
 ---
 
