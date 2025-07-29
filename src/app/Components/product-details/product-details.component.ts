@@ -18,15 +18,15 @@ export class ProductDetailsComponent implements OnInit {
   constructor(private prdSer: ProductsApiService ,
     private activatedRoute: ActivatedRoute
   ){}
-    
-  
+
+
   ngOnInit(){
      this.productId = this.activatedRoute.snapshot.paramMap.get('pid')!
 
     this.prdSer.getProductDetails(this.productId).subscribe({
       next: (data)=>{
         this.productDetails = data
-      } 
+      }
     })
   }
 }

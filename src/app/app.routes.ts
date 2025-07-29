@@ -3,10 +3,10 @@ import { HomeComponent } from './Components/home/home.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { ProductsListComponent } from './Components/products-list/products-list.component';
 import { ProductDetailsComponent } from './Components/product-details/product-details.component';
-import { BlankComponent } from './Layouts/blank/blank/blank.component';
 import { CartComponent } from './Components/cart/cart.component';
-import { AuthComponent } from './Layouts/auth/auth/auth.component';
 import { LoginComponent } from './Components/login/login.component';
+import { BlankComponent } from './Layouts/blank/blank.component';
+import { AuthComponent } from './Layouts/auth/auth.component';
 
 export const routes: Routes = [
 

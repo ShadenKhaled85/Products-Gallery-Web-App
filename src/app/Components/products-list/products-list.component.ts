@@ -24,7 +24,7 @@ export class ProductsListComponent implements OnInit {
       next: (data)=>{
         this.productsList = data
         this.productsListFiltered= this.productsList
-      } 
+      }
     })
   }
 
@@ -34,8 +34,8 @@ export class ProductsListComponent implements OnInit {
   this.productsListFiltered = this.productsListFiltered.filter(row => row.title.toLowerCase().includes(input))
   }
 
-onSortByPrice() {
-  if(this.isProductsSortedByPriceDesc){
+onSortByPrice(sortType: string) {
+  if(sortType === 'asc'){
     // Sort Ascending
     this.productsListFiltered.sort((a, b) => a.price - b.price);
   }
@@ -43,7 +43,7 @@ onSortByPrice() {
     // Sort Descending
   this.productsListFiltered.sort((a, b) => b.price - a.price);
   }
-  
+
   this.isProductsSortedByPriceDesc = !this.isProductsSortedByPriceDesc
 }
 

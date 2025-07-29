@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { AuthService } from '../../Services/auth.service';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms'
-import { Router } from 'express';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +21,7 @@ export class LoginComponent {
   successMsg: string = '';
 
   loginForm : FormGroup = new FormGroup({
-    email: new FormControl(null, [Validators.required, Validators.email]),
+    username: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
     password: new FormControl(null, [Validators.required, Validators.pattern(/^[A-Z][a-z0-9]{6,}$/)]),
   })
 

@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class ProductCardComponent {
 
   @Input({required: true}) product!: Product;
-  
+
   constructor(private router: Router){}
 
   onShowPrdDetails(){
