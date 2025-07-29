@@ -23,12 +23,6 @@
             @if(loginForm.get('username')?.getError('required')){
             <li>Username is required</li>
             }
-            @if (loginForm.get('name')?.getError('minlength')) {
-            <li>At least 3 characters</li>
-            }
-            @if (loginForm.get('name')?.getError('maxlength')) {
-            <li>Exceeded maximum length (Up to 20 characters)</li>
-            }
           </ul>
         </div>
       </div>

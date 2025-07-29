@@ -21,8 +21,8 @@ export class LoginComponent {
   successMsg: string = '';
 
   loginForm : FormGroup = new FormGroup({
-    username: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
-    password: new FormControl(null, [Validators.required, Validators.pattern(/^[A-Z][a-z0-9]{6,}$/)]),
+    username: new FormControl(null, [Validators.required]),
+    password: new FormControl(null, [Validators.required]),
   })
 
   submitForm(){
@@ -45,7 +45,6 @@ export class LoginComponent {
         error:(err)=>{
           this.isLoading = false;
           // Display error
-          console.log(err.message);
           this.errorMsg = err.error.message;
         }
       })
