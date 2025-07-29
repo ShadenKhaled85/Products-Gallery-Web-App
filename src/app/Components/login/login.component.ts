@@ -36,6 +36,7 @@ export class LoginComponent {
           this.errorMsg = '';
           console.log(res);
           this.successMsg = res.message
+          this.authService.setLoginStatus(true);
           // Navigate to Home page
           setTimeout(() => {
             this.router.navigate(['/home'])

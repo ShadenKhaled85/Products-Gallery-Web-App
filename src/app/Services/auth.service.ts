@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { enviroment } from '../Environments/environment.deployment';
 
 @Injectable({
@@ -8,9 +8,20 @@ import { enviroment } from '../Environments/environment.deployment';
 })
 export class AuthService {
 
-  constructor( private httpClient: HttpClient ) { }
+  private isUserLoggedSubject = new BehaviorSubject<boolean>(false);
+  isUserLogged$ = this.isUserLoggedSubject.asObservable();
 
-  signIn(data:object) : Observable<any>{
-    return this.httpClient.post(`${enviroment.backendUrl}auth/login` , data)
+  constructor(private httpClient: HttpClient) {}
+
+  signIn(data: object): Observable<any> {
+    return this.httpClient.post(`${enviroment.backendUrl}auth/login`, data);
+  }
+
+  setLoginStatus(status: boolean) {
+    this.isUserLoggedSubject.next(status);
+  }
+
+  getLoginStatus(): boolean {
+    return this.isUserLoggedSubject.getValue();
   }
 }

@@ -1,27 +1,31 @@
-<div (click)="onShowPrdDetails()"
+<div
   class="group bg-white h-[450px] rounded-3xl border border-gray-300 shadow-sm hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden">
 
-  <!-- ? Product Image -->
-  <div class="bg-white p-4 overflow-hidden flex items-center justify-center">
-    <img [src]="product.image" alt="product"
-      class="w-full h-[220px] object-contain group-hover:scale-105 transition-transform duration-300" />
-  </div>
-
-  <!-- ? Product Info -->
-  <div class="flex-1 flex flex-col justify-between p-5">
-    <div class="mb-4">
-      <span class="inline-block font-semibold text-blue-600 bg-blue-100 text-xs uppercase rounded-full px-3 py-1 mb-2">
-        {{ product.title.split(' ', 5).join(' ') }}
-      </span>
-      <h3 class="text-lg font-bold text-gray-800 trunproducte px-1">
-        {{ product.title.split(' ', 2).join(' ') }}
-      </h3>
+  <div (click)="onShowPrdDetails()">
+    <!-- ? Product Image -->
+    <div class="bg-white p-4 overflow-hidden flex items-center justify-center">
+      <img [src]="product.image" alt="product"
+        class="w-full h-[220px] object-contain group-hover:scale-105 transition-transform duration-300" />
     </div>
 
-    <div class="flex justify-between items-center text-sm text-gray-600">
-      <span class="text-base text-gray-800 font-semibold">{{ product.price }} EGP</span>
+    <!-- ? Product Info -->
+    <div class="flex-1 flex flex-col justify-between p-5">
+      <div class="mb-4">
+        <span
+          class="inline-block font-semibold text-blue-600 bg-blue-100 text-xs uppercase rounded-full px-3 py-1 mb-2">
+          {{ product.title.split(' ', 5).join(' ') }}
+        </span>
+        <h3 class="text-lg font-bold text-gray-800 trunproducte px-1">
+          {{ product.title.split(' ', 2).join(' ') }}
+        </h3>
+      </div>
+
+      <div class="flex justify-between items-center text-sm text-gray-600">
+        <span class="text-base text-gray-800 font-semibold">{{ product.price }} EGP</span>
+      </div>
     </div>
   </div>
+
 
   <!-- ? Add to Cart Button -->
   <div class="p-5 pt-0">
